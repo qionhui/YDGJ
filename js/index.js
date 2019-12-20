@@ -12,7 +12,6 @@ $(function () {
         $(this).removeClass("show");
         $(".nav_hide ul:eq("+$(this).index()+")").removeClass("show");
         if($(window).width() <= 1000){
-            // $(".nav_hide ul").removeClass("hide");
         }
     })
     $(".nav_hide ul").hover(function () {
@@ -28,6 +27,21 @@ $(function () {
         $(".nav_hide").fadeIn();
     },function () {
         $(".nav_hide").fadeOut();
+    })
+
+
+    let a = new Banner("banner_ul");
+    a.switchTime = 2000;
+    a.xzStop = "#banner .auto";
+    a.setBtn("#banner .sele_btn","xz");
+    a.setLeftRight("#banner .left_move","#banner .right_move");
+    a.init();
+    a.startTimer();
+
+    $("#banner .sele_btn a").click(function () {
+        $("#banner .sele_btn a").removeClass("xz");
+        $(this).addClass("xz");
+        a.setNow($(this).index()+1);
     })
 
 })

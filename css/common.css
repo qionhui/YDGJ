@@ -39,6 +39,9 @@
 .jus-space-between{
     justify-content: space-between;
 }
+.jus-center{
+    justify-content: center;
+}
 .color_black{
     color: black;
 }

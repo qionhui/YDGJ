@@ -154,9 +154,119 @@ nav  .ul_none .flex_1.show{
 #main{
     height: 100px;
 }
+
+#main form{
+    padding: 5px 0 5px 0;
+}
+#main form .input_text{
+    width: 210px;
+    height: 26px;
+    border: none;
+    background: url("../images/search.png") no-repeat;
+    vertical-align: middle;
+    outline: none;
+    padding-left: 5px;
+}
+#main form .input_btn{
+    width: 32px;
+    height: 26px;
+    margin-left: 5px;
+    background: url("../images/search.png") right;
+    border: none;
+    cursor: pointer;
+}
+#main form .search{
+    width: 294px;
+    height: 26px;
+    margin-left: 10px;
+}
+#main form img{
+    margin-top: 13px;
+}
+
+@media (min-width: 1000px) {
+    #main form{
+        display: none;
+    }
+}
+
+#banner .ban_bg{
+    height: 370px;
+    position: absolute;
+    z-index: 0;
+    background: url("../images/636287247382744050.jpg") center bottom no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+}
+#banner .mask{
+    position: absolute;
+    z-index: 0;
+    height: 370px;
+    background-image: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
+}
 #banner>.auto{
     max-width: 1200px;
-    height: 23rem;
-    border: solid 1px red;
+    height: 370px;
+    overflow: hidden;
+}
+#banner ul.re{
+    width: 400%;
+}
+#banner .move_btn{
+    position: absolute;
+    top: 50%;
+    z-index: 997;
+    height: 60px;
+    transform: translateY(-50%);
+}
+#banner .move_btn a{
+    width: 32px;
+    height: 60px;
+    background: url("../images/bg_24.png") 0 -65px;
+    margin: 0 0 0 10px;
+    opacity: 0;
+    transition: 500ms;
+}
+#banner:hover .move_btn a{
+    opacity: 1;
+}
+#banner .move_btn a:hover{
+    background-position-y: 0;
+}
+#banner .move_btn .right_move{
+    background-position: -35px -65px;
+    margin: 0 10px 0 0;
+}
+#banner .sele_btn{
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    height: 18px;
+    justify-content: center;
+}
+#banner .sele_btn a{
+    width: 10px;
+    height: 10px;
+    background: url("../images/switch.png");
+    border-radius: 100%;
+    margin: 0 3px 0 3px;
+}
+#banner .sele_btn a.xz{
+    background-position-x: -10px;
+}
+@media (max-width: 1000px) {
+    #banner>.auto,#banner .ban_bg,#banner .mask{
+        height: 35vh;
+    }
+    #banner .move_btn a{
+        opacity: 0;
+    }
+    #banner:hover .move_btn a{
+        opacity: 0;
+    }
+    #banner .move_btn a:hover{
+        opacity: 0;
+        background-position-y: -65px;
+    }
 }
 /* main of style end */
