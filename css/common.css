@@ -1,0 +1,44 @@
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.re
+{
+    position: relative;
+}
+.auto{
+    margin: auto;
+}
+.block{
+    display: block;
+}
+.flex{
+    display: flex;
+}
+.flex_1{
+    flex: 1;
+}
+.none{
+    margin: 0;
+    padding: 0;
+}
+.link_none{
+    text-decoration: none;
+}
+.ul_none{
+    list-style-type: none;
+}
+.height_100{
+    height: 100%;
+}
+.width_100{
+    width: 100%;
+}
+.jus-space-between{
+    justify-content: space-between;
+}
+.color_black{
+    color: black;
+}
