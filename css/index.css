@@ -259,6 +259,7 @@ nav  .ul_none .flex_1.show{
         height: 35vh;
     }
     #banner .move_btn a{
+        height: 0;
         opacity: 0;
     }
     #banner:hover .move_btn a{
