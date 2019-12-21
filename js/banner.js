@@ -12,6 +12,7 @@ class Banner {
         this.xzStop = null;//选中停止(获取控件)
         this.btn = null;
         this.btn_cssName = null;
+        this.btn_name = null;
 
         this.init();
     }
@@ -28,6 +29,8 @@ class Banner {
     }
     startTimer(){
         let self = this;
+        if (this.timer != null)
+            clearInterval(this.timer);
         this.timer = setInterval(function () {
             self.rightMove();
             self.cut();
@@ -35,25 +38,39 @@ class Banner {
     }
     stopTimer(){
         clearInterval(this.timer);
+        this.timer = null;
     }
     cut(){
         let temp;
         let self = this;
         this.isMoveIng = true;
         this.controls.animate({
-            left : this.left + "px"
+            left : ((this.now-1) * -100) + "%"
         },function () {
             self.isMoveIng = false;
             if(self.now == 1 || self.now == self.max){
-                self.btn.find("a").removeClass(self.btn_cssName);
-                self.btn.find("a:eq(0)").addClass(self.btn_cssName);
-                temp =  $("#banner_ul img:eq(0)").attr("src");
+                if(self.btn_name == null){
+                    self.btn.find("a").removeClass(self.btn_cssName);
+                    self.btn.find("a:eq(0)").addClass(self.btn_cssName);
+                }else {
+                    $(self.btn_name).removeClass(self.btn_cssName);
+                    $(self.btn_name + ":eq(0)").addClass(self.btn_cssName);
+                }
             }
             else {
+                if(self.btn_name == null){
+                    self.btn.find("a").removeClass(self.btn_cssName);
+                    self.btn.find("a:eq("+(self.now-1)+")").addClass(self.btn_cssName);
+                }else {
+                    $(self.btn_name).removeClass(self.btn_cssName);
+                    $(self.btn_name + ":eq("+(self.now-1)+")").addClass(self.btn_cssName);
+                }
                 self.btn.find("a").removeClass(self.btn_cssName);
                 self.btn.find("a:eq("+(self.now-1)+")").addClass(self.btn_cssName);
                 temp =  $("#banner_ul img:eq("+ (self.now - 1) +")").attr("src");
             }
+            temp =  $("#banner_ul img:eq("+ (self.now - 1) +")").attr("src");
+            if (self.now == self.max) temp =  $("#banner_ul img:eq("+ 0 +")").attr("src");
             $("#banner .ban_bg").css({
                 "background-image": "url("+temp+")"
             })
@@ -66,7 +83,7 @@ class Banner {
         if(this.now <= 0){
             this.now = this.max;
             this.left = -(this.max-1) * (this.moveW);
-            this.controls.css("left",this.left + "px");
+            this.controls.css("left",((this.now-1) * -100) + "%");
             this.now--;
             this.left += this.moveW;
         }
@@ -80,9 +97,7 @@ class Banner {
         if(self.now > self.max){
             self.now = 1;
             self.left = 0;
-            self.controls.css({
-                left:self.left + "px"
-            });
+            self.controls.css("left",((this.now-1) * -100) + "%");
             this.now++;
             this.left -= this.moveW;
         }

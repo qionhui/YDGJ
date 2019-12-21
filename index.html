@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>广东省粤东技师学院 广东省粤东高级技工学校</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/banner.js"></script>
@@ -11,6 +11,31 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="none">
+    <div id="sign">
+        <div class="auto">
+            <div class="btn">X</div>
+            <form action="">
+            <ul class="none ul_none">
+                <li>1、如实填写报名表各项信息，填完后按“确认”按钮；</li>
+                <li>2、预报名提交成功后，我们会在一周内通知你录取结果，请于接到学校通知后3天内（含周六日）携带户口薄和毕业证原件及复印件到汕头市金新路85号招生大厅接受面试合格后，可现场办理缴费手续；</li>
+                <li>3、咨询电话：0754-88239093，88623363。 ；</li>
+                <li class="flex align-center" ><span>学生姓名：</span><input type="text" class="text"></li>
+                <li class="flex align-center" ><span>学生性别：</span><input type="radio">男 <input type="radio">女</li>
+                <li class="flex align-center" ><span>出生年月：</span><input type="text" class="text"></li>
+                <li class="flex align-center" ><span>学历起点：</span><input type="radio">初中 <input type="radio">高中/中技/中专</li>
+                <li class="flex align-center" ><span>家长手机：</span><input type="text" class="text"></li>
+                <li class="flex align-center" ><span>本人手机：</span><input type="text" class="text"></li>
+                <li class="flex align-center" ><span>报读专业1：</span><input type="text" class="text"></li>
+                <li class="flex align-center" ><span>报读专业2：</span><input type="text" class="text"></li>
+                <li class="flex align-center" ><span>验证码：</span><input type="text"class="check text" >
+                    <i><img class="width_100 height_100" src="./images/chkcode.png" alt=""></i><a href="#" class="common_link link_none">看不清</a>
+                </li>
+                <li class="flex jus-center"><button type="submit">确定</button><button type="reset">重置</button></li>
+            </ul>
+            </form>
+        </div>
+        <div class="sign_bg width_100 height_100"></div>
+    </div>
     <header>
         <div class="header_bg">
             <div class="auto container flex height_100 jus-space-between">
@@ -91,7 +116,7 @@
                     </ul>
                     <ul class="none ul_none flex_1">
                         <li class="text_cen"><a href="#" class="link_none">招生简章</a></li>
-                        <li class="text_cen"><a href="#" class="link_none">在线报名</a></li>
+                        <li class="text_cen"><a href="javascript:;" class="link_none showSign">在线报名</a></li>
                         <li class="text_cen"><a href="#" class="link_none">入学须知</a></li>
                         <li class="text_cen"><a href="#" class="link_none">就业指导</a></li>
                         <li class="text_cen"><a href="#" class="link_none">招聘信息</a></li>
@@ -270,15 +295,71 @@
                 </video>
             </div>
             <div class="box left width_100">
-                <div class="title">活动剪辑 <a href="#" class="right link_none color_black">更多</a></div>
-                <div class="carousel">
-
+                <div class="title flex jus-space-between">活动剪辑
+                    <div class="sele_btn ">
+                        <a href="javascript: ;" class="sele1 block left xz"></a>
+                        <a href="javascript: ;" class="sele1 block left"></a>
+                        <a href="javascript: ;" class="sele1 block left"></a>
+                    </div>
+                    <a href="#" class="right link_none color_black">更多</a>
                 </div>
+
+                    <div id="carousel">
+                        <div class="auto width_100 height_100 container">
+                            <div class="re height_100">
+                                <ul id="carousel_ul" class="banner none ul_none re height_100 flex">
+                                    <li class="height_100 width_100 flex">
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(1).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(2).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(3).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(4).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(5).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(6).jpg" alt=""></a>
+
+                                    </li>
+
+                                    <li class="height_100 width_100 flex">
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(7).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(8).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(9).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(10).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(11).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(12).jpg" alt=""></a>
+
+                                    </li>
+
+                                    <li class="height_100 width_100 flex">
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(13).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(14).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(15).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(16).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(17).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(18).jpg" alt=""></a>
+
+                                    </li>
+                                    <li class="height_100 width_100 flex">
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(1).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(2).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(3).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(4).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(5).jpg" alt=""></a>
+                                        <a href="javascript: ;" class="flex_1"><img class="width_100 height_100" src="./images/copy/jpg%20(6).jpg" alt=""></a>
+
+                                    </li>
+                                </ul>
+                                <div class="move_btn width_100 flex jus-space-between">
+                                    <a href="javascript: ;" class="left_move"></a>
+                                    <a href="javascript: ;" class="right_move"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
             </div>
             <div class="box left width_100">
                 <div class="title">快捷通道</div>
                 <div class="vessel flex width_100">
-                    <div class="link_box left"><img src="./images/hotlink1.jpg" alt=""></div>
+                    <div class="link_box left showSign"><img src="./images/hotlink1.jpg" alt=""></div>
                     <div class="link_box left"><img src="./images/hotlink2.jpg" alt=""></div>
                     <div class="link_box left"><img src="./images/hotlink3.jpg" alt=""></div>
                     <div class="link_box left"><img src="./images/hotlink4.jpg" alt=""></div>

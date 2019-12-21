@@ -1,4 +1,5 @@
 $(function () {
+    $("#sign").fadeOut(0);
     $(".nav_hide").fadeOut(0);
     $(".row1_left .carousel .text_ul li").hide();
     $(".row1_right .content2").hide();
@@ -25,15 +26,12 @@ $(function () {
         $(this).removeClass("show");
         $("nav  .ul_none .flex_1:eq("+$(this).index()+")").removeClass("show");
     })
-
     $("nav").hover(function () {
         $(".nav_hide").stop(true);
         $(".nav_hide").fadeIn();
     },function () {
         $(".nav_hide").fadeOut();
     })
-
-
     let a = new Banner("banner_ul");
     a.switchTime = 5000;
     a.xzStop = "#banner .auto";
@@ -41,13 +39,24 @@ $(function () {
     a.setLeftRight("#banner .left_move","#banner .right_move");
     a.init();
     a.startTimer();
-
+    let a2 = new Banner("carousel_ul");
+    a2.switchTime = 5000;
+    a2.xzStop = "#carousel .auto";
+    a2.setBtn("#carousel .sele_btn","xz");
+    a2.setLeftRight("#carousel .left_move","#carousel .right_move");
+    a2.btn_name = ".box  .sele_btn a";
+    a2.init();
+    a2.startTimer();
     $("#banner .sele_btn a").click(function () {
         $("#banner .sele_btn a").removeClass("xz");
         $(this).addClass("xz");
         a.setNow($(this).index()+1);
     })
-
+    $(".box .sele_btn a").click(function () {
+        $(".box .sele_btn a").removeClass("xz");
+        $(this).addClass("xz");
+        a2.setNow($(this).index()+1);
+    })
     let cutIndex = 0;
     let oldCutIndex = 0;
     let timer;
@@ -61,7 +70,6 @@ $(function () {
     function stopTimer() {
         clearInterval(timer);
     }
-
     function cut() {
         isCutIng = true;
         if (cutIndex >= 5){
@@ -102,7 +110,6 @@ $(function () {
     $(".row1_left").mouseleave(function () {
         startTimer();
     })
-
     $(".row1_right .title a").hover(function () {
         if($(window).width() < 770)return;
         $(".row1_right .xz").removeClass("xz");
@@ -119,4 +126,13 @@ $(function () {
         $(".row1_right .content .re>.flex:eq("+$(this).index()+")").fadeIn(500);
     })
 
+    $(".showSign").click(function () {
+        $("#sign").fadeIn(500);
+    })
+    $(".sign_bg").click(function () {
+        $("#sign").fadeOut(500);
+    })
+    $("#sign .btn").click(function () {
+        $("#sign").fadeOut(500);
+    })
 })
