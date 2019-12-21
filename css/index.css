@@ -1,3 +1,6 @@
+body{
+
+}
 /* header_bg of style  start */
 header .header_bg{
     height: 160px;
@@ -243,10 +246,12 @@ nav  .ul_none .flex_1.show{
     padding: 10px;
     margin-bottom: 10px;
     border-bottom: #ccc solid 1px;
+    font-weight: bold;
 }
 .row1_left{
     flex: 3;
     margin-right: 2%;
+    overflow: hidden;
 }
 @media (max-width: 1200px) {
     .row1_left{
@@ -370,5 +375,70 @@ nav  .ul_none .flex_1.show{
 .row1_right .content .re>.flex{
     /*position: absolute;*/
     top: 0;
+}
+.row3{
+    margin-top: 5px;
+}
+.row3 .box{
+    width: 33%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.row3 .box a:hover{
+    color: #23527c;
+    text-decoration: underline;
+}
+.row3 .box_ul a,.row3 .box_ul li{
+   font-size: 13px;
+}
+.row3 .box_ul li{
+    background-image: url("../images/dot.png");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+.row3 .min_box{
+    width: 370px;
+    height: 102px;
+    border-bottom: solid 2px #ccc;
+    margin-bottom: 10px;
+}
+.row3 .min_box img{
+    width: 120px;
+    height: 90px;
+}
+.row3 .min_box a{
+    margin-left: 15px;
+    width: 204px;
+}
+@media (max-width: 1200px) and (min-width: 800px){
+    .row3 .min_box a{
+        width: 100%
+    }
+    .row3 .min_box img{
+        margin-left: 50%;
+        transform: translateX(-100%);
+    }
+    .row3 .min_box{
+        height: 120px;
+    }
+}
+@media (min-width: 800px) {
+    .row3 .box_ul a{
+        width: 200px;
+        height: 17px;
+        overflow: hidden;
+    }
+}
+@media (max-width: 800px) {
+    .row3 .box{
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    .row3 .min_box{
+        width: 100%
+    }
 }
 /* main of style end */
