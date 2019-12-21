@@ -13,6 +13,11 @@ class Banner {
         this.btn = null;
         this.btn_cssName = null;
         this.btn_name = null;
+        this.startX = 0;
+        this.endX = 0;
+        this.moveTemp = 0;
+        this.movX = 0;
+        this.isDown = false;
 
         this.init();
     }
@@ -44,6 +49,9 @@ class Banner {
         let temp;
         let self = this;
         this.isMoveIng = true;
+        this.startX = 0;
+        this.movX = 0;
+        this.endX = 0;
         this.controls.animate({
             left : ((this.now-1) * -100) + "%"
         },function () {
@@ -74,6 +82,11 @@ class Banner {
             $("#banner .ban_bg").css({
                 "background-image": "url("+temp+")"
             })
+        })
+    }
+    resetCut(){
+        this.controls.animate({
+            left : ((this.now-1) * -100) + "%"
         })
     }
     leftMove(){
@@ -120,5 +133,126 @@ class Banner {
         this.now = index;
         this.left = (index-1) * -this.moveW;
         this.cut();
+    }
+    startTouch(touch_){
+        let self = this;
+        $(touch_).on("touchstart", function(e) {
+            e.preventDefault();
+            self.stopTimer();
+            self.startX = e.originalEvent.changedTouches[0].pageX;
+        });
+
+        $(touch_).on("touchend", function(e) {
+            e.preventDefault();
+            self.startTimer();
+            self.endX = e.originalEvent.changedTouches[0].pageX;
+            let x = self.endX - self.startX;
+            if(x <=  -(self.controls.find("li").width()/2))
+            {
+                self.rightMove();
+            }
+            if(x > (self.controls.find("li").width()/2))
+            {
+                self.leftMove();
+            }
+            self.resetCut();
+        });
+
+        $(touch_).on("touchmove", function(e) {
+            e.preventDefault();
+            self.stopTimer();
+            let moveX = e.originalEvent.changedTouches[0].pageX - self.startX;
+            if(moveX < 0){
+                if(self.now == self.max){
+                    self.now = 1;
+                    self.controls.css("left",((this.now-1) * -100) + "%");
+                }
+                self.controls.css({
+                    "left": (-(self.controls.find("li").width()) * (self.now-1) + moveX) + "px"
+                })
+            }
+            if(moveX > 0){
+                if (self.now == 1){
+                    self.now = self.max;
+                    self.controls.css("left",((this.now-1) * -100) + "%");
+                }
+                self.controls.css({
+                    "left": ((-self.controls.find("li").width()) * (self.now-1) + moveX) + "px"
+                })
+            }
+        });
+    }
+    startPcTouch(touch_){
+        let self = this;
+        $(touch_).on("mousedown", function(e) {
+            e.preventDefault();
+            self.isDown = true;
+            self.startX = e.pageX;
+        });
+
+        $(touch_).on("mouseup", function(e) {
+            e.preventDefault();
+            self.isDown = false;
+            if (self.startX == 0)return;
+            if (self.movX == 0)return;
+            self.endX = e.pageX;
+            let x = self.endX - self.startX;
+            if(x <=  -(self.controls.find("li").width()/2))
+            {
+                self.rightMove();
+            }
+            if(x > (self.controls.find("li").width()/2))
+            {
+                self.leftMove();
+            }
+            self.resetCut();
+
+            self.startX = 0;
+            self.movX = 0;
+            self.endX = 0;
+        });
+        $(touch_).on("mouseleave", function(e) {
+            e.preventDefault();
+            if(self.startX == 0)return;
+            self.endX = e.pageX;
+            let x = self.endX - self.startX;
+            if(x <=  -(self.controls.find("li").width()/2))
+            {
+                self.rightMove();
+            }
+            if(x > (self.controls.find("li").width()/2))
+            {
+                self.leftMove();
+            }
+            self.resetCut();
+
+            self.startX = 0;
+        });
+        $(touch_).on("mousemove", function(e) {
+            e.preventDefault();
+            self.stopTimer();
+            if (!self.isDown) return;
+            if (self.startX == 0)return;
+            let moveX = e.pageX - self.startX;
+            self.movX = moveX;
+            if(moveX < 0){
+                if(self.now == self.max){
+                    self.now = 1;
+                    self.controls.css("left",((this.now-1) * -100) + "%");
+                }
+                self.controls.css({
+                    "left": (-(self.controls.find("li").width()) * (self.now-1) + moveX) + "px"
+                })
+            }
+            if(moveX > 0){
+                if (self.now == 1){
+                    self.now = self.max;
+                    self.controls.css("left",((this.now-1) * -100) + "%");
+                }
+                self.controls.css({
+                    "left": ((-self.controls.find("li").width()) * (self.now-1) + moveX) + "px"
+                })
+            }
+        });
     }
 }

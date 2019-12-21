@@ -37,6 +37,9 @@ $(function () {
     a.xzStop = "#banner .auto";
     a.setBtn("#banner .sele_btn","xz");
     a.setLeftRight("#banner .left_move","#banner .right_move");
+    a.startTouch("#banner .move_btn");
+    a.startPcTouch("#banner .move_btn");
+
     a.init();
     a.startTimer();
     let a2 = new Banner("carousel_ul");
@@ -45,6 +48,8 @@ $(function () {
     a2.setBtn("#carousel .sele_btn","xz");
     a2.setLeftRight("#carousel .left_move","#carousel .right_move");
     a2.btn_name = ".box  .sele_btn a";
+    a2.startTouch("#carousel .move_btn");
+    a2.startPcTouch("#carousel .move_btn");
     a2.init();
     a2.startTimer();
     $("#banner .sele_btn a").click(function () {
