@@ -438,7 +438,11 @@ nav  .ul_none .flex_1.show{
         box-sizing: border-box;
     }
     .row3 .min_box{
+        display: flex;
         width: 100%
+    }
+    .row3 .min_box a{
+        width: 180px
     }
 }
 /* main of style end */
