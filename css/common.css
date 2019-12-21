@@ -62,3 +62,13 @@
 .color_white{
     color: white;
 }
+.cle{
+    clear: both;
+}
+.common_link{
+    color: black;
+}
+.common_link:hover{
+    color: #23527c;
+    text-decoration: underline;
+}
