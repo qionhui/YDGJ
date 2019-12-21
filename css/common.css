@@ -11,6 +11,11 @@
 .auto{
     margin: auto;
 }
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
 .block{
     display: block;
 }
@@ -19,6 +24,9 @@
 }
 .flex_1{
     flex: 1;
+}
+.flex_wrap{
+    flex-wrap: wrap;
 }
 .none{
     margin: 0;
@@ -36,12 +44,21 @@
 .width_100{
     width: 100%;
 }
+.text_cen{
+    text-align: center;
+}
 .jus-space-between{
     justify-content: space-between;
 }
 .jus-center{
     justify-content: center;
 }
+.align-center{
+    align-items: center;
+}
 .color_black{
     color: black;
+}
+.color_white{
+    color: white;
 }
